@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+.size-xs{
+    width: 100px !important;
+    height: 100px !important;
+}
+
+
+@media print   {
+    .bg-dark {
+      background-color: white !important;
+     
+    } 
+    .navbar-dark .navbar-brand{
+        color:black !important;
+    }
+    .size-xs{
+        display: block;
+        margin: auto;
+        width: 50px !important;
+        height: 50px !important;
+    }
+    a {
+        color: black;
+        text-decoration: none;
+    }
+    table, thead,td {
+        text-align: center;
+        border:solid black 1px;
+    }
+    thead {
+        font-weight: bolder;
+        color: black !important;
+     
+      }
+  }

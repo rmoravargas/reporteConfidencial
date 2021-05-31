@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Sistema de Reportes</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="d-flex flex-grow-1 justify-content-end">
+        <button class="btn btn-primary mx-2" (click)="mostrarDialogoImprimir()">
+          Imprimir
+        </button>
+        <button class="btn btn-outline-secondary" (click)="signOut()">
+          Cerrar Sesión
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+<h1 class="text-center mt-5">
+  <img
+    src="../../../assets/firebase-logo.png"
+    class="mb-4 img-fluid rounded-circle size-xs"
+  />
+  Reporte confidencial
+</h1>
+
+<div class="row mt-5">
+  <div class="col">
+    <table class="table table-striped table-hover">
+      <thead class="table-dark bg-dark">
+        <td>#</td>
+        <td>Nombre</td>
+        <td>Grupo</td>
+        <td>Precio unitario</td>
+        <td>Cantidad</td>
+      </thead>
+      <tr *ngFor="let producto of productosActivos$ | async; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <a href="{{ producto.sitioWeb }}">{{ producto.name }}</a>
+        </td>
+        <td>{{ producto.group }}</td>
+        <td>{{ producto.unitPrice }}</td>
+        <td>{{ producto.quantity }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

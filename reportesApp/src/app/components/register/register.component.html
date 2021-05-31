@@ -1,0 +1,72 @@
+<div class="text-center p-5 bg-light rounded-3">
+  <main class="form-signin">
+    <form [formGroup]="formdata">
+      <h1 class="h3 mb-3 fw-normal">Bienvenido</h1>
+      <h3 class="h3 mb-3 fw-normal">Registro de usuarios</h3>
+      <img
+        class="p-5 mb-4 img-fluid rounded-circle"
+        src="../../../assets/firebase-logo.png"
+      />
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingName"
+          formControlName="fullName"
+          placeholder="your full name"
+          required
+        />
+        <label for="floatingName">Nombre</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingEmail"
+          formControlName="email"
+          placeholder="name@example.com"
+          required
+        />
+        <label for="floatingEmail">Correo electrónico</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          formControlName="userPassword"
+          placeholder="Password"
+          required
+        />
+        <label for="floatingPassword">Contraseña</label>
+      </div>
+    </form>
+    <div class="mb-3">
+      <a [routerLink]="['/', 'recovery-password']">Olvido su contraseña?</a>
+    </div>
+    <div class="row m-4">
+      <div class="col">
+        <button
+          class="btn btn-outline-secondary btn-block"
+          type="submit"
+          [routerLink]="['/', 'login']"
+        >
+          Ir a Inicio
+        </button>
+      </div>
+      <div class="col">
+        <button
+          class="btn btn-primary btn-block {{
+            this.formdata.invalid ? 'disabled' : ''
+          }}"
+          type="submit"
+          (click)="registerWithEmailAndPassword()"
+        >
+          Registrarse
+        </button>
+      </div>
+    </div>
+
+    <p class="mt-5 mb-3 text-muted">Programación Web © 2021</p>
+  </main>
+</div>

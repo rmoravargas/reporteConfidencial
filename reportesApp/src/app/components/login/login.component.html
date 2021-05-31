@@ -1,0 +1,33 @@
+ 
+  <div   class="text-center p-5  bg-light rounded-3" >
+    <main class="form-signin">
+      <form [formGroup] = "formdata" >
+        <h1 class="h3 mb-3 fw-normal">Bienvenido</h1>
+        <h3 class="h3 mb-3 fw-normal">Inicio de sesión</h3>
+    <img class="p-5 mb-4 img-fluid rounded-circle" src="../../../assets/firebase-logo.png" >
+        
+        <div class="form-floating">
+          <input type="email" class="form-control" id="floatingInput" formControlName="email" placeholder="name@example.com" required>
+          <label for="floatingInput">Correo electrónico</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" formControlName="userPassword" placeholder="Password" required>
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+      </form>
+      <div class=" mb-3">
+        <a [routerLink]="['/','recovery-password']">Olvido su contraseña?</a>
+      </div>
+     <div class="row m-4">
+         <div class="col">
+            <button class="btn btn-outline-secondary btn-block"  type="submit" [routerLink]="['/','register']">Ir a Registrarme</button>
+        </div>
+         <div class="col">
+            <button class="btn btn-primary btn-block {{ this.formdata.invalid?'disabled':''}}" type="submit" (click)="signInWithEmailAndPassword()">Iniciar sesión</button> 
+         </div>
+     </div> 
+        
+        <p class="mt-5 mb-3 text-muted">Programación Web © 2021</p>
+      
+    </main> 
+  </div>
